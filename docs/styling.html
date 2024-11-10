@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BApopUp Documentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1><a href="/">BApopUp</a></h1>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3>Getting Started</h3>
+                    <ul>
+                        <li><a href="/docs/installation.html">Installation</a></li>
+                        <li><a href="/docs/configuration.html">Configuration</a></li>
+                        <li><a href="/docs/usage.html">Basic Usage</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Features</h3>
+                    <ul>
+                        <li><a href="/docs/triggers.html">Trigger Types</a></li>
+                        <li><a href="/docs/display-rules.html">Display Rules</a></li>
+                        <li><a href="/docs/cookies.html">Cookie Management</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Advanced</h3>
+                    <ul>
+                        <li><a href="/docs/hooks.html">Actions & Filters</a></li>
+                        <li><a href="/docs/styling.html">Custom Styling</a></li>
+                        <li><a href="/docs/api.html">JavaScript API</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <div class="top-bar">
+               
+                <div class="theme-toggle">
+                    <button id="theme-switch">🌙</button>
+                </div>
+            </div>
+            <div class="content-body">
+                <h1>Custom Styling</h1>
+            
+                <section class="doc-section">
+                    <h2>CSS Examples</h2>
+            
+                    <div class="code-example">
+                        <h3>Popup Container</h3>
+                        <pre><code>.bapopup-container {
+                max-width: 500px;
+                border-radius: 15px;
+                padding: 30px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }</code></pre>
+                    </div>
+            
+                    <div class="code-example">
+                        <h3>Close Button</h3>
+                        <pre><code>.bapopup-close {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background: #f0f0f0;
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            
+            .bapopup-close:hover {
+                background: #e0e0e0;
+                transform: rotate(90deg);
+            }</code></pre>
+                    </div>
+            
+                    <div class="code-example">
+                        <h3>Overlay</h3>
+                        <pre><code>.bapopup-overlay {
+                background: rgba(0, 0, 0, 0.7);
+                backdrop-filter: blur(3px);
+            }</code></pre>
+                    </div>
+                </section>
+            
+                <section class="doc-section">
+                    <h2>JavaScript Customization</h2>
+                    <pre><code>// Custom close action
+            jQuery('.bapopup-close').on('click', function() {
+                // Your custom code
+                console.log('Popup closed');
+            });
+            
+            // Custom open animation
+            jQuery('.bapopup-container').addClass('custom-animation');</code></pre>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="/js/custom.js"></script>
+</body>
+</html>

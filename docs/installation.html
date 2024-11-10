@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BApopUp Documentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1><a href="/">BApopUp</a></h1>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3>Getting Started</h3>
+                    <ul>
+                        <li><a href="/docs/installation.html">Installation</a></li>
+                        <li><a href="/docs/configuration.html">Configuration</a></li>
+                        <li><a href="/docs/usage.html">Basic Usage</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Features</h3>
+                    <ul>
+                        <li><a href="/docs/triggers.html">Trigger Types</a></li>
+                        <li><a href="/docs/display-rules.html">Display Rules</a></li>
+                        <li><a href="/docs/cookies.html">Cookie Management</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Advanced</h3>
+                    <ul>
+                        <li><a href="/docs/hooks.html">Actions & Filters</a></li>
+                        <li><a href="/docs/styling.html">Custom Styling</a></li>
+                        <li><a href="/docs/api.html">JavaScript API</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <div class="top-bar">
+               
+                <div class="theme-toggle">
+                    <button id="theme-switch">🌙</button>
+                </div>
+            </div>
+            <div class="content-body">
+                <h1>Installation</h1>
+                
+                <section class="doc-section">
+                    <h2>Requirements</h2>
+                    <div class="requirements-list">
+                        <div class="requirement-item">
+                            <h4>WordPress</h4>
+                            <p>Version 5.6 or higher</p>
+                        </div>
+                        <div class="requirement-item">
+                            <h4>PHP</h4>
+                            <p>Version 7.4 or higher</p>
+                        </div>
+                        <div class="requirement-item">
+                            <h4>Elementor</h4>
+                            <p>Optional - for advanced design features</p>
+                        </div>
+                    </div>
+                </section>
+            
+                <section class="doc-section">
+                    <h2>Installation Steps</h2>
+                    <div class="steps">
+                        <div class="step">
+                            <h3>1. Download</h3>
+                            <p>Download the plugin from WordPress repository or GitHub releases.</p>
+                            <div class="code-block">
+                                <code>https://github.com/yourusername/bapopup/releases/latest</code>
+                            </div>
+                        </div>
+            
+                        <div class="step">
+                            <h3>2. Upload</h3>
+                            <p>Upload via WordPress admin panel:</p>
+                            <ol>
+                                <li>Go to Plugins > Add New</li>
+                                <li>Click "Upload Plugin"</li>
+                                <li>Choose the downloaded zip file</li>
+                                <li>Click "Install Now"</li>
+                            </ol>
+                        </div>
+            
+                        <div class="step">
+                            <h3>3. Activate</h3>
+                            <p>After installation, click "Activate Plugin"</p>
+                        </div>
+                    </div>
+                </section>
+            
+                <section class="doc-section">
+                    <h2>Post-Installation</h2>
+                    <p>After activation, you'll find "BApopUp" in your WordPress admin menu.</p>
+                    <img src="../images/admin-menu.png" alt="Admin Menu Location" class="doc-image">
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="/js/custom.js"></script>
+</body>
+</html>

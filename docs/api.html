@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BApopUp Documentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1><a href="/">BApopUp</a></h1>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3>Getting Started</h3>
+                    <ul>
+                        <li><a href="/docs/installation.html">Installation</a></li>
+                        <li><a href="/docs/configuration.html">Configuration</a></li>
+                        <li><a href="/docs/usage.html">Basic Usage</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Features</h3>
+                    <ul>
+                        <li><a href="/docs/triggers.html">Trigger Types</a></li>
+                        <li><a href="/docs/display-rules.html">Display Rules</a></li>
+                        <li><a href="/docs/cookies.html">Cookie Management</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Advanced</h3>
+                    <ul>
+                        <li><a href="/docs/hooks.html">Actions & Filters</a></li>
+                        <li><a href="/docs/styling.html">Custom Styling</a></li>
+                        <li><a href="/docs/api.html">JavaScript API</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <div class="top-bar">
+              
+                <div class="theme-toggle">
+                    <button id="theme-switch">🌙</button>
+                </div>
+            </div>
+            <div class="content-body">
+                <h1>JavaScript API</h1>
+            
+                <section class="doc-section">
+                    <h2>Available Methods</h2>
+                    
+                    <div class="api-method">
+                        <h3>showPopup()</h3>
+                        <p>Manually show a popup</p>
+                        <div class="code-example">
+
+                        <pre><code>// Show popup by ID
+            bapopup.showPopup(123);</code></pre></div>
+                    </div>
+            
+                    <div class="api-method">
+                        <h3>hidePopup()</h3>
+                        <p>Manually hide a popup</p>
+                        <div class="code-example">
+
+                        <pre><code>// Hide current popup
+            bapopup.hidePopup();</code></pre></div>
+                    </div>
+            
+                    <div class="api-method">
+                        <h3>Events</h3>
+                        <div class="code-example">
+
+                        <pre><code>// Listen for popup events
+            document.addEventListener('bapopup:shown', function(e) {
+                console.log('Popup shown:', e.detail.popupId);
+            });
+            
+            document.addEventListener('bapopup:hidden', function(e) {
+                console.log('Popup hidden:', e.detail.popupId);
+            });</code></pre></div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="/js/custom.js"></script>
+</body>
+</html>

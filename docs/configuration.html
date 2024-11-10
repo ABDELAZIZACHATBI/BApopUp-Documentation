@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BApopUp Documentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1><a href="/">BApopUp</a></h1>
+
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3>Getting Started</h3>
+                    <ul>
+                        <li><a href="/docs/installation.html">Installation</a></li>
+                        <li><a href="/docs/configuration.html">Configuration</a></li>
+                        <li><a href="/docs/usage.html">Basic Usage</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Features</h3>
+                    <ul>
+                        <li><a href="/docs/triggers.html">Trigger Types</a></li>
+                        <li><a href="/docs/display-rules.html">Display Rules</a></li>
+                        <li><a href="/docs/cookies.html">Cookie Management</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Advanced</h3>
+                    <ul>
+                        <li><a href="/docs/hooks.html">Actions & Filters</a></li>
+                        <li><a href="/docs/styling.html">Custom Styling</a></li>
+                        <li><a href="/docs/api.html">JavaScript API</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <div class="top-bar">
+                <div class="theme-toggle">
+                    <button id="theme-switch">🌙</button>
+                </div>
+            </div>
+            <div class="content-body">
+                <h1>Configuration</h1>
+            
+                <section class="doc-section">
+                    <h2>Global Settings</h2>
+                    <p>Configure global settings that apply to all popups:</p>
+                    
+                    <div class="setting-group">
+                        <h3>Cookie Settings</h3>
+                        <p>Control how often popups appear to the same visitor:</p>
+                        <ul>
+                            <li><strong>Every time</strong> - Show on every visit</li>
+                            <li><strong>1 day</strong> - Once per day</li>
+                            <li><strong>1 week</strong> - Once per week</li>
+                            <li><strong>1 month</strong> - Once per month</li>
+                            <li><strong>1 year</strong> - Once per year</li>
+                        </ul>
+                    </div>
+            
+                    <div class="setting-group">
+                        <h3>Custom CSS & JS</h3>
+                        <p>Add custom styles and scripts globally:</p>
+                        <div class="code-block">
+                            <pre><code>/* Custom CSS Example */
+            .bapopup-container {
+                border-radius: 10px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }</code></pre>
+                        </div>
+                    </div>
+                </section>
+            
+                <section class="doc-section">
+                    <h2>Individual Popup Settings</h2>
+                    
+                    <div class="setting-group">
+                        <h3>Display Duration</h3>
+                        <p>Control when your popup is active:</p>
+                        <ul>
+                            <li><strong>Start Date</strong> - When to start showing the popup</li>
+                            <li><strong>End Date</strong> - When to stop showing the popup</li>
+                            <li><strong>Always Show</strong> - Ignore date restrictions</li>
+                        </ul>
+                    </div>
+            
+                    <div class="setting-group">
+                        <h3>Trigger Settings</h3>
+                        <p>Choose how your popup appears:</p>
+                        <ul>
+                            <li><strong>Immediate</strong> - Show instantly</li>
+                            <li><strong>Delay</strong> - Wait specified seconds</li>
+                            <li><strong>Scroll</strong> - Show after scrolling</li>
+                            <li><strong>Exit Intent</strong> - Show when leaving page</li>
+                        </ul>
+                    </div>
+            
+                    <div class="setting-group">
+                        <h3>Display Location</h3>
+                        <p>Control where your popup appears:</p>
+                        <ul>
+                            <li><strong>All Pages</strong> - Show everywhere</li>
+                            <li><strong>Homepage</strong> - Only on homepage</li>
+                            <li><strong>All Posts</strong> - On all posts</li>
+                            <li><strong>All Pages</strong> - On all pages</li>
+                            <li><strong>Specific Pages</strong> - Choose specific pages</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="/js/custom.js"></script>
+</body>
+</html>
