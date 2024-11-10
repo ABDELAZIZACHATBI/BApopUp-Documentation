@@ -18,30 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
     searchInput.addEventListener('input', function(e) {
         const value = e.target.value.toLowerCase();
     });
-
-
-
-    document.querySelectorAll('.copy-button').forEach(button => {
-        button.addEventListener('click', () => {
-            const code = button.parentElement.querySelector('code').textContent;
-            navigator.clipboard.writeText(code);
-            
-            button.textContent = 'Copied!';
-            setTimeout(() => {
-                button.textContent = 'Copy';
-            }, 2000);
-        });
-    });
-    
-    const searchInput = document.querySelector('.search-box input');
-    searchInput.addEventListener('input', (e) => {
-        const value = e.target.value.toLowerCase();
-        const sections = document.querySelectorAll('.doc-section');
-        
-        sections.forEach(section => {
-            const text = section.textContent.toLowerCase();
-            section.style.display = text.includes(value) ? 'block' : 'none';
-        });
-    });
 });
+
 
