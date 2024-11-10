@@ -21,3 +21,40 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    const currentPage = window.location.pathname.split('/').pop();
+    const menuLinks = document.querySelectorAll('.nav-section a');
+    function setActiveLink() {
+        menuLinks.forEach(link => {            
+            link.classList.remove('active');      
+            const pageName = link.getAttribute('href').split('/').pop();
+
+            if (pageName === currentPage) {
+                link.classList.add('active');
+                
+                const parentSection = link.closest('.nav-section');
+                if (parentSection) {
+                    parentSection.classList.add('open');
+                }
+            }
+        });
+    }
+
+    setActiveLink();
+
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            menuLinks.forEach(l => l.classList.remove('active'));
+            
+            this.classList.add('active');
+        });
+    });
+
+    const activeLink = document.querySelector('.nav-section a.active');
+    if (activeLink) {
+        activeLink.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    
+});
+
