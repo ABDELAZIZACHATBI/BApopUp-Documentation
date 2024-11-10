@@ -251,6 +251,19 @@ th {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .doc-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* .sidebar {
+        display: none;
+    } */
+
+    .content {
+        margin-left: 0;
+        padding: 1rem;
+    }
 }
 
 /* Dark Mode Toggle */
@@ -402,7 +415,7 @@ h1 {
 }
 
 
-/* @media (max-width: 1200px) {
+@media (max-width: 1200px) {
     :root {
         --sidebar-width: 250px;
     }
@@ -410,9 +423,9 @@ h1 {
     .content {
         padding: 1.5rem;
     }
-} */
+}
 
-/* @media (max-width: 1024px) {
+@media (max-width: 1024px) {
     :root {
         --sidebar-width: 200px;
     }
@@ -425,7 +438,7 @@ h1 {
     .nav-section {
         margin-bottom: 1.5rem;
     }
-} */
+}
 
 @media (max-width: 768px) {
     .app {
