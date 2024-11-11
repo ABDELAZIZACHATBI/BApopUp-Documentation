@@ -11,41 +11,41 @@
 </head>
 <body>
     <div class="app">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="sidebar-header">
-                <h1><a href="/BApopUp-Documentation/">BApopUp</a></h1>
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+            <h1><a href="index.html">BApopUp</a></h1>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <h3>Getting Started</h3>
+                <ul>
+                    <li><a href="docs/installation.html">Installation</a></li>
+                    <li><a href="docs/configuration.html">Configuration</a></li>
+                    <li><a href="docs/usage.html">Basic Usage</a></li>
+                </ul>
             </div>
 
-            <nav class="sidebar-nav">
-                <div class="nav-section">
-                    <h3>Getting Started</h3>
-                    <ul>
-                        <li><a href="../docs/installation.html">Installation</a></li>
-                        <li><a href="../docs/configuration.html">Configuration</a></li>
-                        <li><a href="../docs/usage.html">Basic Usage</a></li>
-                    </ul>
-                </div>
+            <div class="nav-section">
+                <h3>Features</h3>
+                <ul>
+                    <li><a href="docs/triggers.html">Trigger Types</a></li>
+                    <li><a href="docs/display-rules.html">Display Rules</a></li>
+                    <li><a href="docs/cookies.html">Cookie Management</a></li>
+                </ul>
+            </div>
 
-                <div class="nav-section">
-                    <h3>Features</h3>
-                    <ul>
-                        <li><a href="../docs/triggers.html">Trigger Types</a></li>
-                        <li><a href="../docs/display-rules.html">Display Rules</a></li>
-                        <li><a href="../docs/cookies.html">Cookie Management</a></li>
-                    </ul>
-                </div>
-
-                <div class="nav-section">
-                    <h3>Advanced</h3>
-                    <ul>
-                        <li><a href="../docs/hooks.html">Actions & Filters</a></li>
-                        <li><a href="../docs/styling.html">Custom Styling</a></li>
-                        <li><a href="../docs/api.html">JavaScript API</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </aside>
+            <div class="nav-section">
+                <h3>Advanced</h3>
+                <ul>
+                    <li><a href="docs/hooks.html">Actions & Filters</a></li>
+                    <li><a href="docs/styling.html">Custom Styling</a></li>
+                    <li><a href="docs/api.html">JavaScript API</a></li>
+                </ul>
+            </div>
+        </nav>
+    </aside>
 
         <!-- Main Content -->
         <main class="content">
@@ -60,40 +60,95 @@
                 <h1>Actions & Filters</h1>
             
                 <section class="doc-section">
-                    <h2>Available Actions</h2>
+                    <h2>Available Filters</h2>
                     
                     <div class="hook-example">
-                        <h3>bapopup_before_show</h3>
-                        <p>Fires before popup is displayed</p>
+                        <h3>bapopup_display_conditions</h3>
+                        <p>Modify popup display conditions. Use this filter to add custom rules for when your popup should appear.</p>
+                        
                         <div class="code-example">
-                        <pre><code>add_action('bapopup_before_show', function($popup_id) {
-                // Your code here
-            });</code></pre> </div>
-                    </div>
+                            <h4>Basic Usage</h4>
+                            <pre><code>add_filter('bapopup_display_conditions', function($conditions, $popup_id) {
+                // Modify conditions
+                return $conditions;
+            }, 10, 2);</code></pre>
+                        </div>
             
-                    <div class="hook-example">
-                        <h3>bapopup_after_show</h3>
-                        <p>Fires after popup is displayed</p>
+                        <h4>Examples:</h4>
+                        
                         <div class="code-example">
-                        <pre><code>add_action('bapopup_after_show', function($popup_id) {
-                // Your code here
-            });</code></pre>
+                            <h5>1. Show popup only on specific days</h5>
+                            <pre><code>add_filter('bapopup_display_conditions', function($conditions, $popup_id) {
+                $current_day = date('l'); // Gets current day name
+                $allowed_days = ['Monday', 'Tuesday', 'Wednesday'];
+                
+                if (!in_array($current_day, $allowed_days)) {
+                    return false; // Don't show popup
+                }
+                
+                return $conditions;
+            }, 10, 2);</code></pre>
+                        </div>
+            
+                        <div class="code-example">
+                            <h5>2. Show popup only for logged-in users</h5>
+                            <pre><code>add_filter('bapopup_display_conditions', function($conditions, $popup_id) {
+                if (!is_user_logged_in()) {
+                    return false;
+                }
+                return $conditions;
+            }, 10, 2);</code></pre>
+                        </div>
+            
+                        <div class="code-example">
+                            <h5>3. Show popup only in specific category</h5>
+                            <pre><code>add_filter('bapopup_display_conditions', function($conditions, $popup_id) {
+                if (is_single() && !has_category('promo')) {
+                    return false;
+                }
+                return $conditions;
+            }, 10, 2);</code></pre>
+                        </div>
+            
+                        <div class="code-example">
+                            <h5>4. Show popup during business hours</h5>
+                            <pre><code>add_filter('bapopup_display_conditions', function($conditions, $popup_id) {
+                $current_hour = (int)date('H');
+                if ($current_hour < 9 || $current_hour > 17) {
+                    return false; // Only show between 9 AM and 5 PM
+                }
+                return $conditions;
+            }, 10, 2);</code></pre>
                         </div>
                     </div>
                 </section>
             
                 <section class="doc-section">
-                    <h2>Available Filters</h2>
+                    <h2>Parameters</h2>
                     
-                    <div class="hook-example">
-                        <h3>bapopup_display_conditions</h3>
-                        <p>Modify popup display conditions</p>
-                        <div class="code-example">
-
-                        <pre><code>add_filter('bapopup_display_conditions', function($conditions, $popup_id) {
-                // Modify conditions
-                return $conditions;
-            }, 10, 2);</code></pre></div>
+                    <table>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>$conditions</td>
+                            <td>array</td>
+                            <td>Array of current display conditions</td>
+                        </tr>
+                        <tr>
+                            <td>$popup_id</td>
+                            <td>integer</td>
+                            <td>ID of the current popup</td>
+                        </tr>
+                    </table>
+                </section>
+            
+                <section class="doc-section">
+                    <h2>Notes</h2>
+                    <div class="alert alert-info">
+                        <p>Return <code>false</code> to prevent the popup from showing, or return the modified <code>$conditions</code> array to apply your changes.</p>
                     </div>
                 </section>
             </div>
