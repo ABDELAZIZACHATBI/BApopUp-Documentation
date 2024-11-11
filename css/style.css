@@ -472,12 +472,12 @@ h1 {
 }
 
 
-@media screen only and (max-width:800px){
+@media (max-width: 900px) {
     .content-body {
         max-width: 100vw !important;
     }
     
     .content-body, section.doc-section, .requirements-list {
-        max-width: 100% !important;
+        max-width: 100vw !important;
     }
 }
