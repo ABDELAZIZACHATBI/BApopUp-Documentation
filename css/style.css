@@ -470,3 +470,14 @@ h1 {
         grid-template-columns: 1fr;
     }
 }
+
+
+@media screen only and (max-width:800px){
+    .content-body {
+        max-width: 100vw !important;
+    }
+    
+    .content-body, section.doc-section, .requirements-list {
+        max-width: 100% !important;
+    }
+}
