@@ -62,35 +62,46 @@
                     <h2>Available Methods</h2>
                     
                     <div class="api-method">
-                        <h3>showPopup()</h3>
+                        <h3>BApopUp.show(popupId)</h3>
                         <p>Manually show a popup</p>
-                        <div class="code-example">
+                        <div class="code-block">
 
-                        <pre><code>// Show popup by ID
-            bapopup.showPopup(123);</code></pre></div>
+                        <pre><code>// Show popup with ID 123
+            BApopUp.show(123);</code></pre></div>
                     </div>
             
                     <div class="api-method">
-                        <h3>hidePopup()</h3>
-                        <p>Manually hide a popup</p>
-                        <div class="code-example">
+                        <h3>BApopUp.hide()</h3>
+                        <p>Hide current popup</p>
+                        <div class="code-block">
 
                         <pre><code>// Hide current popup
-            bapopup.hidePopup();</code></pre></div>
+            BApopUp.hide();</code></pre></div>
                     </div>
             
                     <div class="api-method">
-                        <h3>Events</h3>
-                        <div class="code-example">
+                        <h3>BApopUp.clearCookies()</h3>
+                        <p>Clear all popup cookies</p>
+                        <div class="code-block">
 
-                        <pre><code>// Listen for popup events
-            document.addEventListener('bapopup:shown', function(e) {
-                console.log('Popup shown:', e.detail.popupId);
-            });
+                        <pre><code>// Clear all popup cookies
+            BApopUp.clearCookies();</code></pre></div>
+                    </div>
             
-            document.addEventListener('bapopup:hidden', function(e) {
-                console.log('Popup hidden:', e.detail.popupId);
-            });</code></pre></div>
+                    <div class="api-method">
+                        <h3>BApopUp.on(event, callback)</h3>
+                        <p>Listen for popup events</p>
+                        <div class="code-block">
+
+                        <pre><code>// Listen for shown event
+                            BApopUp.on('shown', function(e) {
+                                console.log('Popup shown:', e.detail.popupId);
+                            });
+                            
+                            // Listen for hidden event
+                            BApopUp.on('hidden', function(e) {
+                                console.log('Popup hidden:', e.detail.popupId);
+                            });</code></pre>   </div>
                     </div>
                 </section>
             </div>
