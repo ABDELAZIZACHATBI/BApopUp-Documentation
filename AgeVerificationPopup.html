@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BApopUp Documentation</title>
+        <link href="https://fonts.googleapis.com/../css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" type="image/x-icon" href="../images/favicon.png">
+    </head>
+<body>
+    <div class="app">
+   <!-- Sidebar -->
+   <aside class="sidebar">
+    <div class="sidebar-header">
+        <h1><a href="index.html">BApopUp</a></h1>
+    </div>
+
+    <nav class="sidebar-nav">
+        <div class="nav-section">
+            <h3>Getting Started</h3>
+            <ul>
+                <li><a href="installation.html">Installation</a></li>
+                <li><a href="configuration.html">Configuration</a></li>
+                <li><a href="usage.html">Basic Usage</a></li>
+                <li><a href="AgeVerificationPopup.html">Age Verification Popup</a></li>
+            </ul>
+        </div>
+
+        <div class="nav-section">
+            <h3>Features</h3>
+            <ul>
+                <li><a href="triggers.html">Trigger Types</a></li>
+                <li><a href="display-rules.html">Display Rules</a></li>
+                <li><a href="cookies.html">Cookie Management</a></li>
+            </ul>
+        </div>
+
+        <div class="nav-section">
+            <h3>Advanced</h3>
+            <ul>
+                <li><a href="hooks.html">Actions & Filters</a></li>
+                <li><a href="styling.html">Custom Styling</a></li>
+                <li><a href="api.html">JavaScript API</a></li>
+            </ul>
+        </div>
+    </nav>
+</aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <div class="top-bar">
+              
+                <div class="theme-toggle">
+                    <button id="theme-switch">🌙</button>
+                </div>
+            </div>
+            <div class="content-body">
+                <h1>Age Verification Popup</h1>
+             
+                <section class="doc-section">
+                    <h2>Adding Age Verification Button</h2>
+                
+                    <div class="options">
+                        <div class="option">
+                            <h3>Option 1: Using Elementor</h3>
+                            <p>If you're using Elementor page builder:</p>
+                            <ol>
+                                <li>Open popup in Elementor editor</li>
+                                <li>Find "Age Verification Button" in BA Popup widgets</li>
+                                <li>Drag and drop the button to your popup</li>
+                                <li>Customize appearance using Elementor controls:
+                                    <ul>
+                                        <li>Button text</li>
+                                        <li>Colors</li>
+                                        <li>Typography</li>
+                                        <li>Padding & margins</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                            <div class="note">
+                                <p>💡 The button from Elementor widget handles age verification automatically.</p>
+                            </div>
+                        </div>
+                
+                        <div class="option">
+                            <h3>Option 2: Without Elementor</h3>
+                            <p>If you're using the default WordPress editor:</p>
+                            <div class="code-block">
+                <pre><code><!-- Basic button -->
+                &lt;button onclick="BApopUp.confirmAge(this)"&gt;
+                    I am over 18
+                &lt;/button&gt;
+                
+                <!-- Styled button -->
+                &lt;button onclick="BApopUp.confirmAge(this)" class="custom-style"&gt;
+                    Confirm Age
+                &lt;/button&gt;
+                
+                &lt;style&gt;
+                .custom-style {
+                    background: #4CAF50;
+                    color: white;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+                .custom-style:hover {
+                    background: #45a049;
+                }
+                &lt;/style&gt;</code></pre>
+                            </div>
+                            <div class="note">
+                                <p>💡 Add <code>onclick="BApopUp.confirmAge(this)"</code> to any button to handle age verification.</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="important-notes">
+                        <h3>Key Details</h3>
+                        <ul>
+                            <li>Always use <code>BApopUp.confirmAge(this)</code> for manual buttons</li>
+                            <li>No need for special classes - just the onclick handler</li>
+                            <li>Cookie handling is managed by the confirmAge function</li>
+                            <li>Works with any HTML element that can handle click events</li>
+                        </ul>
+                    </div>
+                
+                    <div class="example">
+                        <h3>Additional Examples</h3>
+                        <div class="code-block">
+                <pre><code><!-- Link style -->
+                &lt;a href="#" onclick="BApopUp.confirmAge(this); return false;"&gt;
+                    Verify Age
+                &lt;/a&gt;
+                
+                <!-- Custom element -->
+                &lt;div onclick="BApopUp.confirmAge(this)" class="custom-button"&gt;
+                    Click to Verify Age
+                &lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+
+    <script src="js/custom.js"></script>
+</body>
+</html>
